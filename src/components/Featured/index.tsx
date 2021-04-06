@@ -12,9 +12,9 @@ export const Featured: React.FC = () => {
   const { isDragging } = useDragScroll(scrollWrapperRef);
 
   return (
-    <Container ref={scrollWrapperRef} {...(isDragging && { $grabbing: true })} >
+    <Container ref={scrollWrapperRef} {...(isDragging && { $grabbing: true })}>
       <Card>
-        <Image01 viewBox="0 0 105 105"/>
+        <Image01 viewBox="0 0 105 105" />
         <Content>
           <h1>Título 1</h1>
           <p>
@@ -29,7 +29,7 @@ export const Featured: React.FC = () => {
         </Content>
       </Card>
       <Card>
-        <Image02 viewBox="0 0 105 105"/>
+        <Image02 viewBox="0 0 105 105" />
         <Content>
           <h1>Título 2</h1>
           <p>
