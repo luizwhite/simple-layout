@@ -1,11 +1,18 @@
-import { Container, Card, Content } from './styles';
+import { useRef } from 'react';
+
+import useDragScroll from '../../hooks/useDragScroll';
 
 import { ReactComponent as Image01 } from '../../assets/example_image_1.svg';
 import { ReactComponent as Image02 } from '../../assets/example_image_2.svg';
 
+import { Container, Card, Content } from './styles';
+
 export const Featured: React.FC = () => {
+  const scrollWrapperRef = useRef<HTMLElement>(null);
+  const { isDragging } = useDragScroll(scrollWrapperRef);
+
   return (
-    <Container>
+    <Container ref={scrollWrapperRef} {...(isDragging && { $grabbing: true })} >
       <Card>
         <Image01 viewBox="0 0 105 105"/>
         <Content>

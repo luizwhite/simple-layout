@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section<{ $grabbing?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   overflow-x: scroll;
-  /* cursor: grab; */
+  cursor: ${({ $grabbing }) => !$grabbing ? 'grab' : 'grabbing'};
 
   -ms-overflow-style: none;
   scrollbar-width: none;
